@@ -155,16 +155,10 @@ public class Main {
     public static void quickSort1(int[] array, int start, int end) {
         System.out.println("----快速排序_方法1_开始----");
         System.out.println(ArrayInfo.arrayToString(array));
-
         //递归返回条件 因为存在end击穿的情况 所以不能用==判断
-        if (start > end) {
-            return;
-        }
-
+        if (start > end) return;
         //选定第一个元素为基准
-        int i = start;
-        int j = end;
-
+        int i = start, j = end;
         //标识基准元素目前的位置 在左面则j-- 在右面则i++
         boolean atLeft = true;
         //完全按照快排的规则写的
@@ -175,7 +169,7 @@ public class Main {
                 atLeft = !atLeft;
             }
             //根据位置来改变变量
-            if (atLeft == true) {
+            if (atLeft) {
                 j--;
             } else {
                 i++;
@@ -184,11 +178,8 @@ public class Main {
         System.out.println("排好序的元素位置:" + i);
         quickSort1(array, start, i - 1);
         quickSort1(array, i + 1, end);
-
         System.out.println(ArrayInfo.arrayToString(array));
         System.out.println("----快速排序_方法1_结束----");
-
-
     }
 
     public static void quickSort2(int[] array, int start, int end) {
