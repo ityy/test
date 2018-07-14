@@ -14,7 +14,7 @@ public class Main {
 //        ArrayInfo.resetArray();
 //        bubbleSort(ArrayInfo.array);
         ArrayInfo.resetArray();
-        quickSort1(ArrayInfo.array, 0, 9);
+        quickSort2(ArrayInfo.array, 0, 9);
 //        ArrayInfo.resetArray();
 //        quickSort2(ArrayInfo.array, 0, 9);
 
@@ -150,7 +150,7 @@ public class Main {
     }
 
     /**
-     * 快速排序 方法1
+     * 快速排序 方法1 基准点限定为只能取最左或者最右
      *
      * @param array
      * @param start
@@ -161,10 +161,9 @@ public class Main {
         System.out.println(ArrayInfo.arrayToString(array));
         //递归返回条件 因为存在end击穿的情况 所以不能用==判断
         if (start >= end) return;
-        //选定第一个元素为基准
         int i = start, j = end;
-        //标识基准元素目前的位置 在左面则j-- 在右面则i++
-        boolean atLeft = true;
+        //atLeft初始状态用来指定基准点为start还是end true为start false为end 后续用来标识基准点在交换过程中的位置 在左面则j-- 在右面则i++
+        boolean atLeft = false;
         //完全按照快排的规则写的
         while (i < j) {
             //满足条件则交换元素 并交替左右位置
@@ -186,26 +185,54 @@ public class Main {
         System.out.println("----快速排序_方法1_结束----");
     }
 
+    /**
+     * 快速排序 方法2  高效的快速排序 交换次数更少 基准点可取任意位置
+     *
+     * @param array
+     * @param start
+     * @param end
+     */
     public static void quickSort2(int[] array, int start, int end) {
         System.out.println("----快速排序_方法2_开始----");
         System.out.println(ArrayInfo.arrayToString(array));
-
-        if (start == end)
+        //击穿返回
+        if (start >= end) {
             return;
-        int i = start + 1;
-        int j = end;
-        while (i < j) {
-            for (; array[i] < array[start] && i < j; i++) ;
-            for (; array[j] > array[start] && j > i; j--) ;
-            swap(array, i, j);
         }
-        if (array[i] < array[start])
-            swap(array, i, start);
+        int i = start;
+        int j = end;
+        //定义基准点
+        int p = start;
+
+        while (i < j) {
+            /*
+                注意下面两个while中的判断必须带=号,这样可以略过基准点
+                如果不带等号,相当于递归实现了选择排序,每次递归都排好最左边的那个元素,这一点由打印结果可知
+                也正好对比了快排和选择排序的速度,快排打印的行数比选择排序要少,即选择排序的次数跟元素个数一样,快排则省略了不确定的次数
+            */
+            //在i和j交汇前 找到比p小的为止
+            while (array[j] >= array[p] && i < j) {
+                j--;
+            }
+            //在i和j交汇前 找到比p大的为止
+            while (array[i] <= array[p] && i < j) {
+                i++;
+            }
+            //直接交换这两个数 省去了基准点挪来挪去的步骤
+            if (i < j) {
+                swap(array, i, j);
+            }
+        }
+        System.out.println("排好序的元素位置:" + i);
+        //当i和j交汇时 不管i在p的左边还是右边 i就是基准点最终的位置 直接将其交换
+        //如果i==p表示p的位置一开始就是对的 无需交换
+        if (i != p) {
+            swap(array, i, p);
+        }
         quickSort2(array, start, i - 1);
-        quickSort2(array, i, end);
+        quickSort2(array, i + 1, end);
         System.out.println(ArrayInfo.arrayToString(array));
         System.out.println("----快速排序_方法2_结束----");
-
     }
 
     public static void swap(int[] array, int i, int j) {
