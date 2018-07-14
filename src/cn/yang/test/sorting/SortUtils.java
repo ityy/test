@@ -135,6 +135,7 @@ public class SortUtils {
 
     /**
      * 快速排序 方法1 适合基准点取最左或取最右的情形
+     * 只用一个while实现快速排序
      *
      * @param array
      * @param start
@@ -146,7 +147,7 @@ public class SortUtils {
         //递归返回条件 因为存在end击穿的情况 所以不能用==判断
         if (start >= end) return;
         int i = start, j = end;
-        //atLeft初始状态用来指定基准点为start还是end true为start false为end 标识基准点在交换过程中的位置 在左面则j-- 在右面则i++
+        //定义基准点 true为start false为end 并且用来标识基准点在交换过程中的位置 在左面则j-- 在右面则i++
         boolean atLeft = true;
         //完全按照快排的规则写的
         while (i < j) {
