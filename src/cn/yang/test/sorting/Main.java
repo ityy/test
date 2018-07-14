@@ -20,7 +20,6 @@ public class Main {
 
     }
 
-
     /**
      * 直接插入排序 方法1
      *
@@ -71,7 +70,6 @@ public class Main {
         System.out.println("----直接插入排序_方法2_结束----");
 
     }
-
 
     /**
      * 直接选择排序 方法1
@@ -151,12 +149,18 @@ public class Main {
 
     }
 
-
+    /**
+     * 快速排序 方法1
+     *
+     * @param array
+     * @param start
+     * @param end
+     */
     public static void quickSort1(int[] array, int start, int end) {
         System.out.println("----快速排序_方法1_开始----");
         System.out.println(ArrayInfo.arrayToString(array));
         //递归返回条件 因为存在end击穿的情况 所以不能用==判断
-        if (start > end) return;
+        if (start >= end) return;
         //选定第一个元素为基准
         int i = start, j = end;
         //标识基准元素目前的位置 在左面则j-- 在右面则i++
@@ -209,6 +213,5 @@ public class Main {
         array[i] = array[j];
         array[j] = temp;
     }
-
 
 }
