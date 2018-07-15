@@ -2,6 +2,9 @@ package cn.yang.test.sorting;
 
 /**
  * 排序算法集合
+ *
+ * @author YangYang
+ * @date 2018年7月14日
  */
 public class SortUtils {
     /**
@@ -257,5 +260,120 @@ public class SortUtils {
         int temp = array[i];
         array[i] = array[j];
         array[j] = temp;
+    }
+
+    /**
+     * 归并排序_原理方法 将两个有序子序列合并为一个有序序列
+     * 将单个元素看作一个有序的子序列，则每次两两归并就生成一个新的有序序列，那么递归调用后就可以全部排序完成
+     *
+     * @param r  要排序的数组
+     * @param rr 排序后存放到的数组
+     * @param s  开头序号
+     * @param m  子序列分割序号 为前序列的最后一个元素
+     * @param t  结尾序号
+     */
+    private static void mergeBase(int[] r, int[] rr, int s, int m, int t) {
+        System.out.println("----归并排序_原理方法_开始----");
+        System.out.println(ArrayInfo.arrayToString(r));
+        int i = s;
+        int j = m + 1;
+        int k = s;
+
+        //两个子序列都没结束时 选最小的放入新数组
+        while (i <= m && j <= t) {
+            if (r[i] < r[j]) {
+                rr[k] = r[i];
+                k++;
+                i++;
+            } else {
+                rr[k] = r[j];
+                k++;
+                j++;
+            }
+
+        }
+
+        //两个子序列有一个没结束时  补齐
+        while (i <= m) {
+            rr[k] = r[i];
+            k++;
+            i++;
+        }
+        while (j <= t) {
+            rr[k] = r[j];
+            k++;
+            j++;
+        }
+
+        System.out.println(ArrayInfo.arrayToString(rr));
+        System.out.println("----归并排序_原理方法_结束----");
+
+    }
+
+    /**
+     * 测试 归并排序的原理方法
+     */
+    public static void mergeBaseTest() {
+        //新建一个长度为10的数组，前部分和后部分有序
+        int[] r = {1, 3, 5, 7, 9, 0, 2, 4, 6, 8};
+        //新建一个长度为10的空数组
+        int[] rr = new int[10];
+        //调用归并排序的原理方法
+        mergeBase(r, rr, 0, 4, 9);
+
+    }
+
+    /**
+     * 归并排序
+     * @param array 要排序的数组
+     * @param low 开始下标
+     * @param high 结束下标
+     */
+    public static void mergeSort(int[] array, int low, int high) {
+        System.out.println("----归并排序__开始----");
+        System.out.println(ArrayInfo.arrayToString(array));
+
+        //将数组递归分割为每组2个为止
+        if (low < high) {
+            int middle = (low + high) / 2;
+            //递归分割
+            mergeSort(array, low, middle);
+            mergeSort(array, middle + 1, high);
+            //将递归分割完毕的数组开始归并排序
+            merge(array, low, middle, high);
+        }
+
+        System.out.println(ArrayInfo.arrayToString(array));
+        System.out.println("----归并排序__结束----");
+
+    }
+
+    /**
+     * 单次归并  供归并排序调用  不向外提供
+     * @param array
+     * @param low
+     * @param middle
+     * @param high
+     */
+    private static void merge(int[] array, int low, int middle, int high) {
+        //创建一个临时数组用来存储合并后的数据
+        int[] temp = new int[array.length];
+        int i = low;
+        int j = middle + 1;
+        int k = low;
+        while (i <= middle && j <= high) {
+            if (array[i] < array[j])
+                temp[k++] = array[i++];
+            else
+                temp[k++] = array[j++];
+        }
+        //处理剩余未合并的部分
+        while (i <= middle)
+            temp[k++] = array[i++];
+        while (j <= high)
+            temp[k++] = array[j++];
+        //将临时数组中的内容存储到原数组中
+        while (low <= high)
+            array[low] = temp[low++];
     }
 }

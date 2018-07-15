@@ -1,5 +1,8 @@
 package cn.yang.test.sorting;
 
+/**
+ * 自定义数组信息及展示方法
+ */
 public class ArrayInfo {
 
     public static int[] array = {3, 2, 5, 4, 6, 1, 7, 9, 8, 0};
