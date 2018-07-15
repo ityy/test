@@ -56,6 +56,39 @@ public class SortUtils {
     }
 
     /**
+     * 希尔排序
+     * shell排序算法
+     * 增量h=(h*3)+1; 这个增量公式是由Knuth给出的
+     * 如果不是很了解的话请百度一下吧
+     *
+     * @param array
+     */
+    public static void shellSort(int[] array) {
+        System.out.println("----希尔排序_方法1_开始----");
+        System.out.println(ArrayInfo.arrayToString(array));
+
+        //首先根据数组的长度确定增量的最大值
+        int h = 1;
+        // 按h * 3 + 1得到增量序列的最大值
+        while (h <= array.length / 3)
+            h = h * 3 + 1;
+        //进行增量查找和排序
+        while (h >= 1) {
+            for (int i = h; i < array.length; i++) {
+                for (int j = i; j >= h && array[j] < array[j - h]; j -= h) {
+                    int temp = array[j];
+                    array[j] = array[j - h];
+                    array[j - h] = temp;
+                }
+            }
+            h = h / 3;
+        }
+        System.out.println(ArrayInfo.arrayToString(array));
+        System.out.println("----希尔排序_方法1_结束----");
+
+    }
+
+    /**
      * 直接选择排序 方法1
      *
      * @param array
