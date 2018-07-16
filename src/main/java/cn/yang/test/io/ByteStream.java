@@ -9,12 +9,14 @@ package cn.yang.test.io;
  * FileOutputStream
  *
  * 需求：
- * 想要操作图片数据，这时就要用到字节流
+ * 想要操作图片数据，
+ *
+ * 字节流缓冲区的使用请见CopyMp3.java
  */
 
 import java.io.*;
 
-class FileStream {
+class ByteStream {
     public static void main(String[] args) throws IOException {
         writeFile();
         readFile_1();
