@@ -1,5 +1,9 @@
 package cn.yang.test.sorting;
 
+//1. 引入slf4j接口的Logger和LoggerFactory
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * 排序算法集合
  *
@@ -7,12 +11,17 @@ package cn.yang.test.sorting;
  * @date 2018年7月14日
  */
 public class SortUtils {
+    //2. 声明一个Logger，这个是static的方式，我比较习惯这么写。
+    private final static Logger logger = LoggerFactory.getLogger(SortUtils.class);
+
     /**
      * 直接插入排序 方法1
      *
      * @param array
      */
-    private static void directInsertSort1(int[] array) {
+    public static void directInsertSort1(int[] array) {
+        logger.info("directInsertSort1 beginning");
+
         System.out.println("----直接插入排序_方法1_开始----");
         System.out.println(ArrayInfo.arrayToString(array));
         //i为当前处理的元素 j为已排好的元素
@@ -30,6 +39,7 @@ public class SortUtils {
         }
         System.out.println(ArrayInfo.arrayToString(array));
         System.out.println("----直接插入排序_方法1_结束----");
+        logger.info("directInsertSort1 complete");
 
     }
 
@@ -325,9 +335,10 @@ public class SortUtils {
 
     /**
      * 归并排序
+     *
      * @param array 要排序的数组
-     * @param low 开始下标
-     * @param high 结束下标
+     * @param low   开始下标
+     * @param high  结束下标
      */
     public static void mergeSort(int[] array, int low, int high) {
         System.out.println("----归并排序__开始----");
@@ -350,6 +361,7 @@ public class SortUtils {
 
     /**
      * 单次归并  供归并排序调用  不向外提供
+     *
      * @param array
      * @param low
      * @param middle
