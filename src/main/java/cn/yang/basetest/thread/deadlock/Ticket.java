@@ -1,11 +1,9 @@
-package cn.yang.test.thread.deadlock;
+package cn.yang.basetest.thread.deadlock;
 
-/*
+/**
 死锁。
 同步中嵌套同步。
-
 */
-
 public class Ticket implements Runnable {
     private int tick = 1000;
     Object obj = new Object();

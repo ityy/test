@@ -1,12 +1,20 @@
-package cn.yang.test.log;
+package cn.yang.basetest.log;
 
+/*
+需要使用log4j2.xml来配置log4j2, 详细配置方法见log4j2.xml
+使用Logging框架写Log基本上就三个步骤
+引入loggerg类和logger工厂类
+声明logger
+记录日志
+ */
 
+//1. 引入slf4j接口的Logger和LoggerFactory
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class Log4j2Test {
 
-    // Logger和LoggerFactory导入的是org.slf4j包
+    //2. 声明一个Logger，这个是static的方式，我比较习惯这么写。
     private final static Logger logger = LoggerFactory.getLogger(Log4j2Test.class);
 
 
@@ -14,6 +22,7 @@ public class Log4j2Test {
         long beginTime = System.currentTimeMillis();
 
         for(int i = 0; i < 100000; i++) {
+            //3. log it
             logger.trace("trace level");
             logger.debug("debug level");
             logger.info("info level");

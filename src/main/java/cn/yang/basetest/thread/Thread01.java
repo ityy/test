@@ -1,4 +1,4 @@
-package cn.yang.test.thread;
+package cn.yang.basetest.thread;
 
 public class Thread01 extends Thread {
     @Override

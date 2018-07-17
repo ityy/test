@@ -9,7 +9,6 @@
     <version>1.0-SNAPSHOT</version>
 
 
-
     <dependencies>
 
         <dependency>
@@ -18,13 +17,12 @@
             <version>4.12</version>
         </dependency>
 
-        <!-- slf4j + log4j2 begin -->
+        <!-- ----log支持部分---- slf4j + log4j2 begin -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>1.7.10</version>
         </dependency>
-
         <dependency> <!-- 桥接：告诉Slf4j使用Log4j2 -->
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-slf4j-impl</artifactId>
@@ -35,7 +33,6 @@
             <artifactId>log4j-jcl</artifactId>
             <version>2.2</version>
         </dependency>
-
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
@@ -52,7 +49,21 @@
             <version>4.12</version>
             <scope>compile</scope>
         </dependency>
-        <!-- log4j end-->
+        <!-- ----log支持部分---- end-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </dependencies>
-    
+
 </project>

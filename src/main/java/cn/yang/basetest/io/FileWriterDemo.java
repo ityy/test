@@ -1,4 +1,4 @@
-package cn.yang.test.io;
+package cn.yang.basetest.io;
 /*
 字符流和字节流：
 

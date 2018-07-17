@@ -1,4 +1,4 @@
-package cn.yang.test.sorting;
+package cn.yang.basetest.sorting;
 
 //1. 引入slf4j接口的Logger和LoggerFactory
 import org.slf4j.Logger;

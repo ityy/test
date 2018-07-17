@@ -1,4 +1,4 @@
-package cn.yang.test.sorting;
+package cn.yang.basetest.sorting;
 
 public class Main {
 

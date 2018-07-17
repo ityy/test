@@ -1,4 +1,4 @@
-package cn.yang.test.io;
+package cn.yang.basetest.io;
 
 import java.io.*;
 

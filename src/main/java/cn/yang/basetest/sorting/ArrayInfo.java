@@ -1,4 +1,4 @@
-package cn.yang.test.sorting;
+package cn.yang.basetest.sorting;
 
 /**
  * 自定义数组信息及展示方法
