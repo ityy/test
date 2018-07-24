@@ -18,6 +18,17 @@ public class Person {
         System.out.println("Person类 已加载到内存中!");
     }
 
+    //用于反射创建实例的构造方法
+    //无参
+    public Person() {
+
+    }
+
+    //有参
+    public Person(String name) {
+        this.name=name;
+    }
+
     //用于对反射方法的测试
     public void showInfo1() {
         System.out.println("执行了方法: public void showInfo1() ");
