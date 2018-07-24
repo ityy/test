@@ -12,7 +12,7 @@ public class Person {
     private char sex;
     private int age;
 
-    //定义静态代码块 内加载到内存时执行
+    //定义静态代码块 仅在内加载到内存时执行 不管以后创建几个对象都不再执行
     static {
         System.out.println("Person类 已加载到内存中!");
     }
