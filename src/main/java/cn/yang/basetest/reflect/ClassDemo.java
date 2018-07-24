@@ -5,7 +5,6 @@ import cn.yang.basetest.reflect.pojo.Person;
 /**
  * 测试类 Class
  * 获取类Class的对象
- * 测试Class类对象的方法
  *
  * @author yanga
  * @date 2018年7月24日
