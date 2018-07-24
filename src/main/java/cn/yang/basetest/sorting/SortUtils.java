@@ -223,7 +223,7 @@ public class SortUtils {
      * @param start
      * @param end
      */
-    public static void quickSort2(int[] array, int start, int end) {
+    public static void quickSort2(int[] array, int start, int end)  {
         System.out.println("----快速排序_方法2_开始----");
         System.out.println(ArrayInfo.arrayToString(array));
         //击穿返回
