@@ -3,11 +3,11 @@ package cn.yang.basetest.reflect.pojo;
 import com.alibaba.druid.sql.visitor.functions.Char;
 
 /**
- * 供其他类测试使用的一个pojo类
+ * 供反射测试使用的一个pojo类
  * 包含一些属性和方法
  */
 public class Person {
-    //公开属性 反射字段时测试使用
+    //公开属性
     public String name;
     //私有属性
     private char sex;
@@ -18,13 +18,12 @@ public class Person {
         System.out.println("Person类 已加载到内存中!");
     }
 
-    //用于反射创建实例的构造方法
-    //无参
+    //无参构造
     public Person() {
 
     }
 
-    //有参
+    //有参构造
     public Person(String name) {
         this.name=name;
     }

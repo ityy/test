@@ -19,6 +19,7 @@ public class ClassDemo {
         System.out.println("class1:" + class1);
 
         //方式2 使用静态方法forName("完整类名")获取 会加载到内存中
+            //因为此方法的参数可以通过读配置文件来确定, 所以使用非常灵活, 常常用于各种框架
         Class class2 = Class.forName("cn.yang.basetest.reflect.pojo.Person");
         System.out.println("class2:" + class2);
         System.out.println("class1是否等于class2: " + (class1 == class2));
