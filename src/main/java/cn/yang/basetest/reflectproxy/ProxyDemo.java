@@ -37,9 +37,9 @@ public class ProxyDemo {
                 new InvocationHandler() {
                     /*
                      * 有三个方法:
-                     *  proxy:是代理对象
-                     *  method:代表的是目标方法的字节码对象
-                     *  args:代表是调用目标方法时参数
+                     * proxy - 在其上调用方法的代理实例, 注意invoke有点类似反射的调用, 相当于反向来调用proxy的方法
+                     * method - 对应于在代理实例上调用的接口方法的 Method 实例。Method 对象的声明类将是在其中声明方法的接口，该接口可以是代理类赖以继承方法的代理接口的超接口。
+                     * args - 包含传入代理实例上方法调用的参数值的对象数组，如果接口方法不使用参数，则为 null。基本类型的参数被包装在适当基本包装器类
                      */
                     @Override
                     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
@@ -73,5 +73,8 @@ public class ProxyDemo {
         objProxy.method1();
         //调用方法2 有返回值的情形
         System.out.println(objProxy.method2());
+        //调用方法3 有返回值有参数的情形
+        System.out.println("method3的返回值: " + objProxy.method3(520));
+
     }
 }

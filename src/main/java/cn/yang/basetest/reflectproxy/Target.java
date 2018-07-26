@@ -19,6 +19,7 @@ public class Target implements TargetInterface{
     }
     @Override
     public int method3(int x) {
+        System.out.println("method3 running...");
         return x;
     }
 }
