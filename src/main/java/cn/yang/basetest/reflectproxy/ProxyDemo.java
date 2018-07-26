@@ -12,19 +12,21 @@ import java.lang.reflect.Proxy;
  *      （不用像装饰设计模式那样，手动编写一个代理对象还要编写每个与目标对象相同的方法）
  *
  * 在jdk的API中存在一个Proxy中存在一个生成动态代理的的方法newProxyInstance
- * 返回值：Object就是代理后的对象
+ * 返回值：Object就是代理对象
  * 参数：loader：代表与目标对象相同的类加载器-------目标对象.getClass().getClassLoader()
  *      interfaces：代表与目标对象实现的所有的接口字节码对象数组
  *      h：具体的代理的操作，InvocationHandler接口
  * 注意：JDK的Proxy方式实现的动态代理 目标对象必须有接口 没有接口不能实现jdk版动态代理
+ *
+ * 典型应用:数据库的事务处理  日志系统的日志记录
  */
 public class ProxyDemo {
 
     @Test
     public void test1() {
 
-        // objProxy是代理后的对象, 通过静态方法newProxyInstance来创建
-        TargetInterface objProxy = (TargetInterface) Proxy.newProxyInstance(
+        // targetProxy是代理对象, 通过静态方法newProxyInstance来创建
+        TargetInterface targetProxy = (TargetInterface) Proxy.newProxyInstance(
                 Target.class.getClassLoader(), // 参数1，与目标对象相同的类加载器
                 Target.class.getInterfaces(), // 参数2，目标对象实现的接口，因为可能有多个所以是数组
                 /*
@@ -70,11 +72,11 @@ public class ProxyDemo {
             那么就可以像使用目标对象一样来使用代理对象, 只是代理对象的功能更丰富了.
          */
         //调用方法1
-        objProxy.method1();
+        targetProxy.method1();
         //调用方法2 有返回值的情形
-        System.out.println(objProxy.method2());
+        System.out.println(targetProxy.method2());
         //调用方法3 有返回值有参数的情形
-        System.out.println("method3的返回值: " + objProxy.method3(520));
+        System.out.println("method3的返回值: " + targetProxy.method3(520));
 
     }
 }
