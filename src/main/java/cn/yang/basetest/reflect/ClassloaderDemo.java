@@ -5,7 +5,7 @@ import cn.yang.basetest.reflect.pojo.Person;
 /**
  * 测试类加载器
  */
-public class ClassloaderTest {
+public class ClassloaderDemo {
     public static void main(String[] args) {
 
         //获得Demo字节码文件的类加载器
