@@ -17,8 +17,6 @@ package cn.yang.basetest.thread.synch;
  *
  */
 public class ThreadJion2 {
-    // 100个线程要操作的静态变量
-    public static int n;
 
     public static void main(String[] args) throws InterruptedException {
         Npp2 np = new Npp2();
@@ -39,6 +37,7 @@ public class ThreadJion2 {
 }
 
 class Npp2 implements Runnable {
+    // 100个线程要操作的静态变量
     public static int n;
 
     public void run() {
@@ -55,7 +54,7 @@ class Npp2 implements Runnable {
     // 同步方法，结果正确
     // 因为线程启动的都是这一个对象
     synchronized void nadd() {
-        for (int i = 0; i < 100; i++, n++)
+        for (int i = 0; i < 2000; i++, n++)
             ;
 
     }

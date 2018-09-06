@@ -37,10 +37,11 @@ public class ThreadJion1 {
 
 }
 
-class Npp1 extends Thread {
+   class Npp1 extends Thread {
+    // 100个线程要操作的静态变量
     public static int n;
 
-    public void run() {
+    public  void run() {
 
         nadd();
 
@@ -55,8 +56,9 @@ class Npp1 extends Thread {
     // 同步方法，但打印结果不是10000，因为同步锁是this，而new了100个对象导致锁不一样
     // 加上Static描述后，结果为10000
     // 因为这样会使此方法静态，那么100个对象锁就都一样了
-    synchronized void nadd() {
-        for (int i = 0; i < 100; i++, n++)
+//    synchronized static void nadd() {
+    synchronized  void nadd() {
+        for (int i = 0; i < 2000; i++, n++)
             ;
 
     }

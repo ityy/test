@@ -15,6 +15,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
 /**
+ * 创建自定义过滤器
  * 在过滤器里应用动态代理 将request进行增强 经过判断只对其获取参数的方法单独增强, 使其编码后再返回.
  * 创建过滤器，并在web.xml中注册，拦截全部（即/*）
  * @author Yang
