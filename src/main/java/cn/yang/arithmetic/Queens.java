@@ -39,11 +39,12 @@ public class Queens {
         }
         for (int col = 0; col < size; col++) {
             if (cols[col] == true || leftDiagonal[row - col + size - 1] == true || rightDiagonal[row + col] == true) {
+                //此攻击范围存在皇后则跳过
                 continue;
             }
-            cols[col] = leftDiagonal[row - col + size - 1] = rightDiagonal[row + col] = true;
-            ans.add(new StringBuilder(sb).replace(col, col + 1, "Q").toString());
-            queens(size, row + 1, cols, leftDiagonal, rightDiagonal, sb);
+            cols[col] = leftDiagonal[row - col + size - 1] = rightDiagonal[row + col] = true;//开启攻击范围
+            ans.add(new StringBuilder(sb).replace(col, col + 1, "Q").toString());//本行答案确定
+            queens(size, row + 1, cols, leftDiagonal, rightDiagonal, sb);//查找下一行
             ans.remove(row);//这一行的答案删掉，继续找这一行的下一个列
             cols[col] = leftDiagonal[row - col + size - 1] = rightDiagonal[row + col] = false;//同时解除攻击范围
         }
