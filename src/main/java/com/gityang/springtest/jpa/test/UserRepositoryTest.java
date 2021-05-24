@@ -1,7 +1,7 @@
-package cn.yang.springtest.jpa.test;
+package com.gityang.springtest.jpa.test;
 
-import cn.yang.springtest.jpa.dao.UserRepository;
-import cn.yang.springtest.jpa.pojo.User;
+import com.gityang.springtest.jpa.dao.UserRepository;
+import com.gityang.springtest.jpa.pojo.User;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;

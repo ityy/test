@@ -1,4 +1,4 @@
-package cn.yang.basetest.jvm;
+package com.gityang.basetest.jvm;
 
 //1. 引入slf4j接口的Logger和LoggerFactory
 

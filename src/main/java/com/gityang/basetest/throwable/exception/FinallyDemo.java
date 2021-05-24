@@ -1,4 +1,4 @@
-package cn.yang.basetest.throwable.exception;
+package com.gityang.basetest.throwable.exception;
 
 public class FinallyDemo {
     public static void main(String[] args) {

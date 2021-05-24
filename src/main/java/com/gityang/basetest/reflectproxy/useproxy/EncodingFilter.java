@@ -1,4 +1,4 @@
-package cn.yang.basetest.reflectproxy.useproxy;
+package com.gityang.basetest.reflectproxy.useproxy;
 
 
 import java.io.IOException;

@@ -20,7 +20,7 @@
     <!-- 数据库连接 -->
     <context:property-placeholder location="classpath:properties/db.properties" ignore-unresolvable="true"/>
     <!-- service包 -->
-    <context:component-scan base-package="cn.yang.springtest.jpa.service"/>
+    <context:component-scan base-package="com.gityang.springtest.jpa.service"/>
     <!-- 使用cglib进行动态代理 -->
     <aop:aspectj-autoproxy proxy-target-class="true"/>
     <!-- 支持注解方式声明式事务 -->
@@ -42,7 +42,7 @@
         我们可以看到这个类是实现了JpaRepository接口的，事实上如果我们按照上面的配置，在同一个包下面有UserRepository，但是没有UserRepositoryImpl这个类的话，在运行时期UserRepository这个接口的实现就是上面的SimpleJpaRepository这个接口。
         而如果有UserRepositoryImpl这个文件的话，那么UserRepository的实现类就是UserRepositoryImpl，而UserRepositoryImpl这个类又是SimpleJpaRepository的子类，如此一来就很好的解决了上面的这个不用写implements的问题。我们通过阅读这个类的源代码可以发现，里面包装了entityManager，底层的调用关系还是entityManager在进行CRUD。
     -->
-    <jpa:repositories base-package="cn.yang.springtest.jpa.dao" repository-impl-postfix="Impl"
+    <jpa:repositories base-package="com.gityang.springtest.jpa.dao" repository-impl-postfix="Impl"
                       entity-manager-factory-ref="entityManagerFactory" transaction-manager-ref="transactionManager"/>
 
 
@@ -55,7 +55,7 @@
     -->
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan" value="cn.yang.springtest.jpa.pojo"/>
+        <property name="packagesToScan" value="com.gityang.springtest.jpa.pojo"/>
         <property name="persistenceProvider">
             <bean class="org.hibernate.ejb.HibernatePersistence"/>
         </property>

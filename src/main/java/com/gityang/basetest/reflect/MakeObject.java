@@ -1,6 +1,6 @@
-package cn.yang.basetest.reflect;
+package com.gityang.basetest.reflect;
 
-import cn.yang.basetest.reflect.pojo.Person;
+import com.gityang.basetest.reflect.pojo.Person;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;

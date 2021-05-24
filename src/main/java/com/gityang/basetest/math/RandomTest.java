@@ -1,4 +1,4 @@
-package cn.yang.basetest.math;
+package com.gityang.basetest.math;
 
 import org.junit.Test;
 

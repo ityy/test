@@ -1,4 +1,4 @@
-package cn.yang.basetest.thread.deadlock;
+package com.gityang.basetest.thread.deadlock;
 
 /**
 死锁。

@@ -1,4 +1,4 @@
-package cn.yang.basetest.thread;
+package com.gityang.basetest.thread;
 
 
 public class DemoMain01 {

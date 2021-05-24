@@ -1,4 +1,4 @@
-package cn.yang.springtest.jpa.pojo;
+package com.gityang.springtest.jpa.pojo;
 
 
 import javax.persistence.*;

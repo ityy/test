@@ -1,6 +1,6 @@
-package cn.yang.basetest.reflect;
+package com.gityang.basetest.reflect;
 
-import cn.yang.basetest.reflect.pojo.Person;
+import com.gityang.basetest.reflect.pojo.Person;
 
 /**
  * 测试类加载器

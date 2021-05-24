@@ -1,4 +1,4 @@
-package cn.yang.arithmetic;
+package com.gityang.arithmetic;
 
 import java.util.ArrayList;
 import java.util.List;

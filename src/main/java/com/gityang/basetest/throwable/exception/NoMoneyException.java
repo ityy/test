@@ -1,4 +1,4 @@
-package cn.yang.basetest.throwable.exception;
+package com.gityang.basetest.throwable.exception;
 
 /**
  * 自定义异常

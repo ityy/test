@@ -1,6 +1,6 @@
-package cn.yang.springtest.jpa.dao;
+package com.gityang.springtest.jpa.dao;
 
-import cn.yang.springtest.jpa.pojo.User;
+import com.gityang.springtest.jpa.pojo.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Integer> {

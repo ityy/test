@@ -1,4 +1,4 @@
-package cn.yang.basetest.reflectproxy;
+package com.gityang.basetest.reflectproxy;
 
 import org.junit.Test;
 

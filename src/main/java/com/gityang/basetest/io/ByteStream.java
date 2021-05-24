@@ -1,4 +1,4 @@
-package cn.yang.basetest.io;
+package com.gityang.basetest.io;
 
 /**
  * 字节流：

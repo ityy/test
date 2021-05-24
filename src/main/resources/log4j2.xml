@@ -87,7 +87,7 @@ monitorInterval，含义是每隔多少秒重新读取配置文件，可以不�
         </Root>
 
         <!--按包名指定不同的日志记录方式 有指定按指定的来 没指定的按root的来-->
-        <Logger name="cn.yang.basetest.sorting.SortUtils" level="${log.sql.level}" additivity="false">
+        <Logger name="com.gityang.basetest.sorting.SortUtils" level="${log.sql.level}" additivity="false">
             <AppenderRef ref="Console"/>
         </Logger>
     </Loggers>

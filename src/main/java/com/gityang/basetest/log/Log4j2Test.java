@@ -1,4 +1,4 @@
-package cn.yang.basetest.log;
+package com.gityang.basetest.log;
 
 /*
 需要使用log4j2.xml来配置log4j2, 详细配置方法见log4j2.xml

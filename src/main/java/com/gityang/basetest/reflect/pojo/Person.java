@@ -1,6 +1,4 @@
-package cn.yang.basetest.reflect.pojo;
-
-import com.alibaba.druid.sql.visitor.functions.Char;
+package com.gityang.basetest.reflect.pojo;
 
 /**
  * 供反射测试使用的一个pojo类

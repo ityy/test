@@ -1,4 +1,4 @@
-package cn.yang.hexinjishu_II.c01_stream;
+package com.gityang.hexinjishu_II.c01_stream;
 
 import java.util.Objects;
 import java.util.stream.Collectors;

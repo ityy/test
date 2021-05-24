@@ -1,4 +1,4 @@
-package cn.yang.basetest.reflectproxy;
+package com.gityang.basetest.reflectproxy;
 
 /**
  * 目标对象

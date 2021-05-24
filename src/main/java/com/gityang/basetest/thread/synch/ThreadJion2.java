@@ -1,4 +1,4 @@
-package cn.yang.basetest.thread.synch;
+package com.gityang.basetest.thread.synch;
 
 
 

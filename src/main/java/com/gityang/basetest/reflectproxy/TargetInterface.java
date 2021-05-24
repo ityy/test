@@ -1,4 +1,4 @@
-package cn.yang.basetest.reflectproxy;
+package com.gityang.basetest.reflectproxy;
 
 /**
  * 供背代理对象实现的接口

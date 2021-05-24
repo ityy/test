@@ -1,4 +1,4 @@
-package cn.yang.basetest.type;
+package com.gityang.basetest.type;
 
 import java.io.UnsupportedEncodingException;
 

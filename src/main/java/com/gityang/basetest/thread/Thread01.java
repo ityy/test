@@ -1,4 +1,4 @@
-package cn.yang.basetest.thread;
+package com.gityang.basetest.thread;
 
 public class Thread01 extends Thread {
     @Override
@@ -6,5 +6,5 @@ public class Thread01 extends Thread {
         System.out.println("线程Thread01启动了");
     }
 
-    
+
 }

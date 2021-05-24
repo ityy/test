@@ -1,4 +1,4 @@
-package cn.yang.basetest.io.copy;
+package com.gityang.basetest.io.copy;
 
 /**
  * 字节流的缓冲区
